@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати фільм</title>
+</head>
+<body>
+
+    <h1>Додати фільм</h1>
+
+    <form method="POST">
+
+        <p>Назва:</p>
+        <input type="text" name="title" required>
+
+        <p>Жанр:</p>
+        <input type="text" name="genre" required>
+
+        <p>Режисер:</p>
+        <input type="text" name="director" required>
+
+        <p>Рік випуску:</p>
+        <input type="number" name="year" required>
+
+        <p>Тривалість (хвилини):</p>
+        <input type="number" name="duration" required>
+
+        <p>Студія:</p>
+        <input type="text" name="studio" required>
+
+        <h3>Актори</h3>
+
+        <p>Перший актор:</p>
+        <input type="text" name="actor_name" placeholder="П.І.Б.">
+        <input type="text" name="actor_role" placeholder="Роль">
+
+        <p>Другий актор:</p>
+        <input type="text" name="actor_name" placeholder="П.І.Б.">
+        <input type="text" name="actor_role" placeholder="Роль">
+
+        <p>Третій актор:</p>
+        <input type="text" name="actor_name" placeholder="П.І.Б.">
+        <input type="text" name="actor_role" placeholder="Роль">
+
+        <br><br>
+
+        <button type="submit">Зберегти фільм</button>
+
+    </form>
+
+    <br>
+
+    <a href="{{ url_for('film.index') }}">Назад</a>
+
+</body>
+</html>

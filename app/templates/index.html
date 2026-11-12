@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Фільми</title>
+</head>
+<body>
+
+    <h1>Список фільмів</h1>
+
+    <a href="{{ url_for('film.add_film') }}">Додати фільм</a>
+
+    {% for film in films %}
+        <hr>
+
+        <h2>{{ film.title }}</h2>
+
+        <p>Жанр: {{ film.genre }}</p>
+        <p>Режисер: {{ film.director }}</p>
+        <p>Рік випуску: {{ film.year }}</p>
+        <p>Тривалість: {{ film.duration }} хв.</p>
+        <p>Студія: {{ film.studio }}</p>
+
+        <h3>Актори:</h3>
+
+        <ul>
+            {% for actor in film.actors %}
+                <li>{{ actor.name }} — {{ actor.role }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('film.delete_film', film_id=film.id) }}">
+            Видалити
+        </a>
+
+    {% else %}
+        <p>Фільмів поки немає.</p>
+    {% endfor %}
+
+</body>
+</html>
